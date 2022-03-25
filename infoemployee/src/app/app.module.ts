@@ -11,12 +11,14 @@ import { InfoComponent } from './components/info/info.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EminfoComponent } from './components/eminfo/eminfo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageemployyeeComponent,
-    InfoComponent
+    InfoComponent,
+    EminfoComponent
   ],
   imports: [
     BrowserModule,

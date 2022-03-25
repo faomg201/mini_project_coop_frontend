@@ -4,10 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PageemployyeeComponent } from './components/pageemployyee/pageemployyee.component';
 import { InfoComponent } from './components/info/info.component';
+import { EminfoComponent } from './components/eminfo/eminfo.component';
 
 const routes: Routes = [
   {path: 'pageemployyee', component: PageemployyeeComponent},
   {path: 'info', component: InfoComponent},
+  {path: 'eminfo', component: EminfoComponent},
   
   {path:'',
   redirectTo: 'pageemployyee',

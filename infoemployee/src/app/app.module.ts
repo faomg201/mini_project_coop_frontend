@@ -13,6 +13,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EminfoComponent } from './components/eminfo/eminfo.component';
 
+import { NzModalModule } from 'ng-zorro-antd/modal';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { EminfoComponent } from './components/eminfo/eminfo.component';
     NgxMaskModule.forRoot(),
     NgbModule,
     BsDatepickerModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NzModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

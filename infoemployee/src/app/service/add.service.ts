@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LocalStorageService } from 'angular-web-storage';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -10,7 +9,7 @@ export class AddService {
 
   info: any;
 
-  constructor(private http: HttpClient, public local:LocalStorageService) { }
+  constructor(private http: HttpClient) { }
   
   addinfo(info : any){
     return this.http.post<any>('http://localhost:3001/create-emp', info)
@@ -19,9 +18,8 @@ export class AddService {
     }));
   }
 
-  getinfo(token: any){
-    const headers = {'Authorization': token}
-    return this.http.get<any>('http://localhost:3001/getemployee',{headers})
+  getInfo(info: any){
+    return this.http.get<any>('http://localhost:3001/getemployee',info)
     .pipe(map(data => {
       if (data) {
         this.info = data;
@@ -31,22 +29,19 @@ export class AddService {
     }));
   }
 
-  updateinfo(token: any,info: any){
-    const headers = {'Authorization': token}
-    return this.http.put<any>('http://localhost:3000/emp-update',info,{headers})
+  updateinfo(token: any, info:any,employee_id: any){
+    return this.http.put<any>('http://localhost:3001/emp-update/',info)
     .pipe(map(data => {
-      if (data) {
-      
-        console.log(data);
+      if (data) {        
+        console.log(this.info);
       }
       return data;
     }));
   }
 
-  delinfo(token: any,id :any){
-    console.log(id)
-    const headers = {'Authorization': token}
-    return this.http.delete<any>('http://localhost:3001/emp-delete/'+id,{headers})
+  delInfo(token: any,employee_id :any){
+    console.log(employee_id)
+    return this.http.delete<any>('http://localhost:3001/emp-delete/'+employee_id)
   }
 
 

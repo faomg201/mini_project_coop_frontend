@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'eminfo', component: EminfoComponent},
   
   {path:'',
-  redirectTo: 'pageemployyee',
+  redirectTo: 'info',
   pathMatch: 'full'
 }
 ];

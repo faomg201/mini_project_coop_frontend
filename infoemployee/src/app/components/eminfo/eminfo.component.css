@@ -1,8 +1,24 @@
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);   
+    grid-template-columns: repeat(1, 1fr);   
   }
 
   .mar {
     margin-top: 5%;
+}
+
+.sh button {
+    top: 0px;
+    height: 40px;
+    width: 100px;
+    background: linear-gradient(0.25turn, #5f8ecc, #1903968a);
+    border: 2px solid rgba(114,147,50,255)
+}
+
+.sh2 button {
+    top: 0px;
+    height: 40px;
+    width: 100px;
+    background: linear-gradient(0.25turn, #cc5f68, #eb0f58be);
+    border: 2px solid rgba(114,147,50,255)
 }

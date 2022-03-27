@@ -1,9 +1,9 @@
-<div class="body">
-  
+<app-pageemployyee></app-pageemployyee>
+<div class="body">  
   <div class=" bgc2">
     <div class="row">
       <div class="col-sm-1 bgc">
-    
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
       <div class="col-sm-9 mar">
         <div class="row mar2">
@@ -46,33 +46,16 @@
               <br>
 
               <div class="row">
-                <div class="col-4">
-                  <div class="form-floating mb-1">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Nick Name"
-                      formControlName='nick_name'>
-                    <label for="floatingInput">Nick Name</label>
-                    <div *ngIf="nick_name.invalid && (nick_name.dirty || nick_name.touched)"
-                      class="alert alert-danger">
-                      <div *ngIf="nick_name.errors?.['required']">
-                        nick name is required.
-                      </div>
-                      <div *ngIf="nick_name.errors?.['pattern']">
-                        nick name is incorrect !!
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <br>
                 <div class="col mar3">
                   <div class="text-white">
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                        value="option1" formControlName='gender'>
+                        value="ชาย" formControlName='gender'>
                       <label class="form-check-label" for="inlineRadio1">ชาย</label>
                     </div>
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                        value="option2" formControlName='gender'>
+                        value="หญิง" formControlName='gender'>
                       <label class="form-check-label" for="inlineRadio2">หญิง</label>
                     </div>
                   </div>
@@ -81,23 +64,7 @@
               </div>
               <br>
 
-              <div class="row">
-                <div class="col-8">
-                  <div class="form-group">
-                    <div class="form-floating mb-1">
-                      <select class="form-control" id="floatingInput" placeholder="first_name"
-                        formControlName='first_name'>
-                        <option *ngFor="let position of Position" [value]="position">{{position}}
-                        </option>
-                      </select>
-                      <label for="floatingInput">Position</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <br>
-
-              <div class="row">
+              <!-- <div class="row">
                 <div class="container">
                   <div class="row">
                     <div class="col-xs-12 col-12 col-md-4 form-group">
@@ -118,9 +85,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
-
-
+              </div> -->
 
               <br>
 
@@ -162,23 +127,24 @@
               </div>
               <br>
 
-              <div class="row">
+              <!-- <div class="row">
                 <div class="mb-3">
                   <textarea class="form-control" id="address" type="text" placeholder="Address" style="height: 8rem;"
                     formControlName="address"></textarea>
                   <div class="invalid-feedback" data-sb-feedback="address:required">address is required.</div>
                 </div>
-              </div>
+              </div> -->
+
 
             </form><br>
           </div>
           <div class="col-sm-4 mar2">
             <div class="row">
-              <div class="mb-2 text-white">
+              <!-- <div class="mb-2 text-white">
                 <label for="formFileSm" class="form-label">Import Photo</label>
                 <input class="form-control form-control-sm" id="formFileSm" type="file" formControlName="photo"
                   (change)="onChangePhoto($event)">
-              </div>
+              </div> -->
             </div>
             <br>
             <div align="center">

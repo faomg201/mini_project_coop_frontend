@@ -140,15 +140,15 @@
           </div>
           <div class="col-sm-4 mar2">
             <div class="row">
-              <!-- <div class="mb-2 text-white">
+              <div class="mb-2 text-white">
                 <label for="formFileSm" class="form-label">Import Photo</label>
-                <input class="form-control form-control-sm" id="formFileSm" type="file" formControlName="photo"
+                <input class="form-control form-control-sm" id="formFileSm" type="file" formControlName="images"
                   (change)="onChangePhoto($event)">
-              </div> -->
+              </div>
             </div>
             <br>
             <div align="center">
-              <img *ngIf="previewLoaded" class="img-thumbnail" [src]="this.infoForm.value.photo">
+              <img *ngIf="previewLoaded" class="img-thumbnail" [src]="this.infoForm.value.images">
             </div>
             <br>
             <div align="center" class="sh"> <button class="btn btn-primary" (click)="addinfo()">Add</button>

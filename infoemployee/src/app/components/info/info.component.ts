@@ -29,7 +29,7 @@ export class InfoComponent implements OnInit {
     // hir_date: new FormControl('', [Validators.required]),
     // salary: new FormControl('', [Validators.required]),   
     // file: new FormControl('', [Validators.required]),
-    // photo: new FormControl('', [Validators.required])
+    images: new FormControl('', [Validators.required])
   });
 
   Position: string[] = ['Web developer', 'Hardware developer', 'Mobile app developer', 'Software developer'];
@@ -123,7 +123,7 @@ export class InfoComponent implements OnInit {
       reader.onload = () => {
         this.previewLoaded = true;
         this.infoForm.patchValue({
-          photo: reader.result
+          images: reader.result
         })
       }
     }

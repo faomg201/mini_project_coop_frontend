@@ -27,31 +27,15 @@ export class EminfoComponent implements OnInit {
     // birth_date: new FormControl('', [Validators.required]),
     // hir_date: new FormControl('', [Validators.required]),
     // salary: new FormControl('', [Validators.required]),   
-    // file: new FormControl('', [Validators.required]),
-    // photo: new FormControl('', [Validators.required])
+    file: new FormControl('', [Validators.required]),
+    images: new FormControl('', [Validators.required])
   });
-
+  previewLoaded: boolean = false;
   constructor(public local: LocalStorageService,private add : AddService) {
     this.onLoading();
    }
-
-  ngOnInit(): void {
-  }
-
-  get first_name(){
-    return this.infoForm.get('first_name') as FormArray;
-  }
-
-  get last_name(){
-    return this.infoForm.get('last_name') as FormArray;
-  }
-
-  get phone_number(){
-    return this.infoForm.get('phone_number') as FormArray;
-  }
-  get email(){
-    return this.infoForm.get('email') as FormArray;
-  }
+  
+  ngOnInit(): void { } 
 
  onLoading(){
     try {
@@ -81,18 +65,19 @@ export class EminfoComponent implements OnInit {
     // window.location.reload();
   }
 
-  editInfo(){
+  editInfo(employee_id : any){
     this.infoForm.get('first_name')?.setValue(this.info[0].first_name)
-    this.infoForm.get('last_name')?.setValue(this.info[0].last_name)
-    this.infoForm.get('phone_number')?.setValue(this.info[0].phone_number)
+    this.infoForm.get('last_name')?.setValue(this.info[0].last_name)    
     this.infoForm.get('email')?.setValue(this.info[0].email)
+    this.infoForm.get('phone_number')?.setValue(this.info[0].phone_number)
+    console.log(this.infoForm.value)
   }
 
   editInfomation(){
     
   console.log(this.infoForm.value)
   try {
-    this.add.updateinfo(this.token,this.infoForm.value,this.info).subscribe(
+    this.add.updateinfo(this.token,this.infoForm.value).subscribe(
       data => {
         console.log(data)
       },err => {
@@ -102,6 +87,20 @@ export class EminfoComponent implements OnInit {
     console.log(error)
   }
   // window.location.reload();
+  }
+
+  onChangeImg(e : any){
+    if (e.target.files.length > 0) {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          this.previewLoaded = true;
+          this.infoForm.patchValue({
+            img: reader.result
+          })
+      }
+    }
   }
 
 }

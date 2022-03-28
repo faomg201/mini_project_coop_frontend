@@ -26,6 +26,11 @@
               <td>{{item.email}}</td>
               <td>{{item.phone_number}}</td>
               <td>{{item.gender}}</td>
+              <td width="300"><img [src]="item.images"></td>
+              <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                (click)="editInfo(item.employee_id)">
+                Edit Infomations
+              </button></td>
               <td class="sh2"><button class="btn btn-primary" (click)="delInfo(item.employee_id)">Delete</button></td>
             </tr>
           </tbody>
@@ -34,12 +39,6 @@
 
     </div>
   </div>
-
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-    (click)="editInfo()">
-    Edit Infomations
-  </button>
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,9 +49,9 @@
           <a style="margin-left:35%" class="btn btn-outline-secondary pull-right" (click)="editInfomation()">Save changes</a>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body">  
           <form [formGroup]="infoForm" style="margin-left:4%">
-            <div class="card-body" *ngFor="let item of info; index as i">
+            <div class="card-body" *ngFor="let item of info ; index as i">
 
               <div class="row">
                 <div class="col-md-7">
@@ -88,6 +87,15 @@
                     <label for="floatingInput">Phone Number</label>
                     <input style="margin-left:5%" type="text" class="form-control" formControlName='phone_number'
                       value="{{item.phone_number}}">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-7">
+                  <div class="form-group">
+                    <label for="floatingInput">employee_id</label>
+                    <input style="margin-left:5%" type="text" class="form-control" formControlName='employee_id'
+                      value="{{item.employee_id}}">
                   </div>
                 </div>
               </div>
